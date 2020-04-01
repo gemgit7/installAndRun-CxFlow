@@ -2,10 +2,7 @@
     Checkmarx CxFlow batch mode runner. Delegates to the CxFlow jar.
     Checkmarx Professional Services
 
-    Usage: .\CxFlowBatch.ps1 {CxFlow Params}
-    
-    This is a wrapper to the CxFlow jar. The parameters are documented here:
-    https://github.com/checkmarx-ts/cx-flow    
+    Usage: .\CxFlowBatch.ps1 [-cxFlowVersion <version>] [-jdk11] [-installDir <installDir>] -config <configYml> -cxTeam <fullCxTeam> -cxProject <cxProject>    
 #>
 Param(
 
