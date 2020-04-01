@@ -19,6 +19,10 @@ Param(
 
     [Parameter(Mandatory = $True)]
     [ValidateNotNullOrEmpty()]
+    [String] $installDir,
+    
+    [Parameter(Mandatory = $True)]
+    [ValidateNotNullOrEmpty()]
     [String]
     $config,
 
@@ -63,7 +67,10 @@ function InstallCxFlow() {
 	if ($jdk11) {
 		$cxFlowJar = "cx-flow-11-${cxFlowVersion}.jar"
 	}
-    $installDir = "$PWD\CxFlowHello"
+	
+	if (!$installDir) {
+    	$installDir = "$PWD\CxFlow"
+	}
     $nop = New-Item -ItemType Directory -Force -Path $installDir
     $cxFlowFile = "$installDir\$cxFlowJar"
     
